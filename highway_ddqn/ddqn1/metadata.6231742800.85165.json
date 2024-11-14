@@ -1,0 +1,82 @@
+{
+    "agent": {
+        "__class__": "<class '__main__.DQNAgent'>",
+        "batch_size": 64,
+        "device": "mps",
+        "double": true,
+        "exploration": {
+            "final_temperature": 0.05,
+            "method": "EpsilonGreedy",
+            "tau": 10000,
+            "temperature": 1.0
+        },
+        "gamma": 0.9,
+        "learning_rate": 0.001,
+        "learning_starts": 1000,
+        "loss_function": "l2",
+        "memory_capacity": 10000,
+        "model": {
+            "activation": "RELU",
+            "in": 25,
+            "layers": [
+                128,
+                128
+            ],
+            "out": 5,
+            "reshape": "True",
+            "type": "MultiLayerPerceptron"
+        },
+        "n_steps": 1,
+        "optimizer": {
+            "k": 5,
+            "lr": 0.0005,
+            "type": "ADAM",
+            "weight_decay": 0
+        },
+        "target_update": 100,
+        "train_frequency": 4
+    },
+    "env": {
+        "__class__": "<class 'gymnasium.wrappers.order_enforcing.OrderEnforcing'>",
+        "action": {
+            "type": "DiscreteMetaAction"
+        },
+        "centering_position": [
+            0.3,
+            0.5
+        ],
+        "collision_reward": -1,
+        "controlled_vehicles": 1,
+        "duration": 30,
+        "ego_spacing": 1.5,
+        "high_speed_reward": 0.4,
+        "id": "highway-fast-v0",
+        "import_module": null,
+        "initial_lane_id": null,
+        "lane_change_reward": 0,
+        "lanes_count": 3,
+        "manual_control": false,
+        "normalize_reward": true,
+        "observation": {
+            "type": "Kinematics"
+        },
+        "offroad_terminal": false,
+        "offscreen_rendering": false,
+        "other_vehicles_type": "highway_env.vehicle.behavior.IDMVehicle",
+        "policy_frequency": 1,
+        "real_time_rendering": false,
+        "render_agent": true,
+        "reward_speed_range": [
+            20,
+            30
+        ],
+        "right_lane_reward": 0.1,
+        "scaling": 5.5,
+        "screen_height": 150,
+        "screen_width": 600,
+        "show_trajectories": false,
+        "simulation_frequency": 5,
+        "vehicles_count": 20,
+        "vehicles_density": 1
+    }
+}
